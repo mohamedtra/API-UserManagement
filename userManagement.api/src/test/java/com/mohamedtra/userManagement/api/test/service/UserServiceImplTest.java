@@ -28,7 +28,7 @@ public class UserServiceImplTest {
 
 	    @Test
 	    public void addUser() {
-	        User user = new User("Melissa","DURAND", "melissadu@gmail.com", LocalDate.of(2000,2,12), new Address("5 rue barri","paris","france",75000));
+	        User user = new User("Melissa","DURAND", "melissadu@gmail.com", LocalDate.of(2000,2,12), new Address("5 rue barri","paris","france",75000), "engineer");
 	        User userSaved = userServiceImpl.addUser(user);
 	        assertThat(userSaved).isEqualTo("DURAND").as("Should return the same Last Name");
 	        //assertEquals(userSaved.getLastname(), "TATA", "Should return the same Last Name");
