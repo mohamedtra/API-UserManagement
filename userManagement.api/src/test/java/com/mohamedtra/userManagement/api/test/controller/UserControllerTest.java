@@ -7,7 +7,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.time.LocalDate;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -67,8 +66,10 @@ public class UserControllerTest {
 	public void addUser() throws Exception {
 		User user = new User("Jean", "BOSCO", "jeanbo@gmail.com", LocalDate.of(2000, 2, 12),
 				new Address("34 rue de la paix", "paris", "Cannes", 06400), "engineer");
-		restUserMockMvc.perform(MockMvcRequestBuilders.post("/users").content(asJsonString(user))
-				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON));
+		restUserMockMvc.perform(MockMvcRequestBuilders.post("/users")
+                .content(asJsonString(user))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON));
 	}
 
 	public static String asJsonString(final Object obj) {

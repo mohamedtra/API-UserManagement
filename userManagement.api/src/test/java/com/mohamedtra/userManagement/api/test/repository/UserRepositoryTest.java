@@ -1,6 +1,5 @@
 package com.mohamedtra.userManagement.api.test.repository;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -28,8 +27,8 @@ public class UserRepositoryTest {
     @Test
     public void testWhenFindByLastName_thenReturnUser() {
         User result = userRepository.findByLastname("TRAORE");
-        // assertEquals(result.getLastname(), "TRAORE", "Should return the same Last Name");
-        assertThat(result).isEqualTo("TRAORE").as("Should return the same Last Name");
+        assertEquals(result.getLastname(), "TRAORE", "Should return the same Last Name");
+        //assertThat(result).isEqualTo("TRAORE").as("Should return the same Last Name");
     }
 
 

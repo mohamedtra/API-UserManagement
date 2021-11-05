@@ -1,6 +1,7 @@
 package com.mohamedtra.userManagement.api.test.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 import java.time.LocalDate;
 
@@ -30,7 +31,7 @@ public class UserServiceImplTest {
 	    public void addUser() {
 	        User user = new User("Melissa","DURAND", "melissadu@gmail.com", LocalDate.of(2000,2,12), new Address("5 rue barri","paris","france",75000), "engineer");
 	        User userSaved = userServiceImpl.addUser(user);
-	        assertThat(userSaved).isEqualTo("DURAND").as("Should return the same Last Name");
-	        //assertEquals(userSaved.getLastname(), "TATA", "Should return the same Last Name");
+	        //assertThat(userSaved).isEqualTo("DURAND").as("Should return the same Last Name");
+	        assertEquals(userSaved.getLastname(), "DURAND", "Should return the same Last Name");
 	    }
 }
